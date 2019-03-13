@@ -51,10 +51,6 @@
 						id:'008',
 						imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
 						desc:'溜娃儿'
-					},{
-						id:'009',
-						imgUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20191/0334cf5430b9b5505fd79e2b8d7e8670.png',
-						desc:'爬长城'
 					}
 				]
 			}
@@ -66,7 +62,6 @@
 					const page = Math.floor(index/8)
 					if(!pages[page]){
 						pages[page] = []
-						console.log(pages[page])
 					}
 					pages[page].push(item)
 				})
