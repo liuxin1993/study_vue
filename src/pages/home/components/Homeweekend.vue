@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="weekend-tit">周末去哪儿</div>
-		<div class="weekend-box" v-for="item of weekendList" :key="item.id">
+		<div class="weekend-box" v-for="item of list" :key="item.id">
 			<img class="weekend-img" :src="item.imgUrl">
 			<div class="weekend-box1">
 				<div class="img-title">{{item.title}}</div>
@@ -14,32 +14,8 @@
 <script>
 	export default {
 		name:"HomeWeekend",
-		data () {
-			return {
-				weekendList:[
-					{
-						id:'001',
-						imgUrl:'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-						title:'北京赏花好地方',
-						desc:'乱花渐欲迷人眼，京城赏花大搜索'
-					},{
-						id:'002',
-						imgUrl:'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-						title:'北京赏花好地方',
-						desc:'乱花渐欲迷人眼，京城赏花大搜索'
-					},{
-						id:'003',
-						imgUrl:'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-						title:'北京赏花好地方',
-						desc:'乱花渐欲迷人眼，京城赏花大搜索'
-					},{
-						id:'004',
-						imgUrl:'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-						title:'北京赏花好地方',
-						desc:'乱花渐欲迷人眼，京城赏花大搜索'
-					}
-				]
-			}
+		props:{
+			list:Array
 		}
 	}
 </script>

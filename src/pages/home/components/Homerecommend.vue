@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="recommend-tit">热销推荐</div>
-		<div class="recommend-box" v-for="item of recommendList" :key="item.id">
+		<div class="recommend-box" v-for="item of list" :key="item.id">
 			<img class="recommend-img" :src="item.imgUrl">
 			<div class="recommend-box1">
 				<div class="recommend-box1-tit">{{item.title}}</div>
@@ -15,32 +15,8 @@
 <script>
 	export default{
 		name:"HomeRecommend",
-		data () {
-			return {
-				recommendList:[
-					{
-						id:'001',
-						imgUrl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-						title:'大连圣亚海洋世界',
-						desc:'浪漫大连首站，浪漫的海洋主题公园'
-					},{
-						id:'002',
-						imgUrl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-						title:'大连圣亚海洋世界',
-						desc:'浪漫大连首站，浪漫的海洋主题公园'
-					},{
-						id:'003',
-						imgUrl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-						title:'大连圣亚海洋世界',
-						desc:'浪漫大连首站，浪漫的海洋主题公园'
-					},{
-						id:'004',
-						imgUrl:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-						title:'大连圣亚海洋世界',
-						desc:'浪漫大连首站，浪漫的海洋主题公园'
-					}
-				]
-			}
+		props:{
+			list:Array
 		}
 	}
 </script>
