@@ -43,7 +43,9 @@
 		},
 		watch: {
 			letter(){
-				this.scroll.scrollToElement(this.$refs[this.letter][0])
+				if(this.letter){
+					this.scroll.scrollToElement(this.$refs[this.letter][0])
+				}
 			}
 		}
 	}
