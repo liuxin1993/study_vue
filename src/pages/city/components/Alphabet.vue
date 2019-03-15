@@ -12,8 +12,13 @@
 		},
 		data () {
 			return {
-				touchStatus:false
+				touchStatus:false,
+				startY:0,
+				timer:null
 			}
+		},
+		updated () {
+			this.startY = this.$refs['A'][0].offsetTop
 		},
 		computed:{
 			letters(){
@@ -32,14 +37,18 @@
 				this.touchStatus = true
 			},
 			touchMove(e){
-				if(this.touchStatus){
-					var startY = this.$refs['A'][0].offsetTop
-					var moveY = e.touches[0].clientY-83
-					var index = Math.floor((moveY-startY)/20)
-					if(index>=0 && index <this.letters.length){
-						this.$emit('change',this.letters[index])
-					}
+				if(this.timer){
+					clearTimeout(this.timer)
 				}
+				this.timer = setTimeout(()=>{
+					if(this.touchStatus){
+						var moveY = e.touches[0].clientY-83
+						var index = Math.floor((moveY-this.startY)/20)
+						if(index>=0 && index <this.letters.length){
+							this.$emit('change',this.letters[index])
+						}
+					}
+				},16)
 			},
 			touchEnd(){
 				this.touchStatus = false
