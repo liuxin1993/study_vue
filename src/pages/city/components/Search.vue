@@ -5,7 +5,7 @@
 		</div>
 		<div class="lixt-conent" v-show="wordkey" ref="wrapper">
 			<ul class="list">
-				<li class="list-name" v-for="item of list" :key="item.id">{{item.name}}</li>
+				<li class="list-name" v-for="item of list" :key="item.id" @click="handCity(item.name)">{{item.name}}</li>
 				<li class="list-ts list-name" v-show="hasNoData">未找到相应结果</li>
 			</ul>
 		</div>
@@ -51,6 +51,12 @@
 		computed:{
 			hasNoData () {
 				return !this.list.length
+			}
+		},
+		methods:{
+			handCity(city){
+				this.$store.commit('changeCity',city)
+				this.$router.push('/')
 			}
 		},
 		mounted () {
