@@ -49,7 +49,8 @@
 			color:#999
 			padding-left:.2rem
 		.header-right
-			width:1.24rem
+			min-width:1.14rem
+			padding:0 .05rem
 			float:right
 			text-align:center
 			color:#fff
