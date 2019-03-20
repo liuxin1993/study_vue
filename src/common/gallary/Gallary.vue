@@ -40,6 +40,7 @@
 		overflow:inherit
 	.contain
 		display:flex
+		z-index:100
 		flex-direction:column
 		justify-content:center
 		position:fixed
