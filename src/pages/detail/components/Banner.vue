@@ -7,12 +7,15 @@
 				<div class="number"><span class="iconfont">&#xe637;</span>6</div>
 			</div>
 		</div>
-		<gallary :imgs="gallaryImgs" v-show="showGallary" @changeGallary="changeGallary"></gallary>
+		<fade-animate>
+			<gallary :imgs="gallaryImgs" v-show="showGallary" @changeGallary="changeGallary"></gallary>
+		</fade-animate>
 	</div>
 </template>
 
 <script>
 	import Gallary from 'common/gallary/Gallary'
+	import FadeAnimate from 'common/fade/FadeAnimate'
 	export default {
 		name:'DetailBanner',
 		props:{
@@ -34,7 +37,8 @@
 			}
 		},
 		components:{
-			Gallary
+			Gallary,
+			FadeAnimate
 		}
 	}
 </script>
